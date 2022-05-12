@@ -23,7 +23,6 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'mvn test'
-                archiveArtifacts 'target/*.xml'
             }
         }
         stage('Package') {
