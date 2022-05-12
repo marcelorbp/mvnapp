@@ -15,6 +15,7 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                 '''
             }
+		}
         stage('Compile') {
             steps {
                 sh 'mvn clean install'
