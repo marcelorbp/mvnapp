@@ -42,6 +42,7 @@ pipeline {
 			    sh 'ssh ec2-user@34.245.42.100 pwd'
 			    sh 'ssh ec2-user@34.245.42.100 rm /var/www/html/cicdapp.war'
 				sh 'scp ./cicdapp.war ec2-user@34.245.42.100:/var/www/html'
+				}
             }
         }
     }
