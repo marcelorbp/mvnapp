@@ -28,11 +28,14 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'mvn package'
-                archiveArtifacts 'target/*.war'
+                #archiveArtifacts 'target/*.war'#
+				stash(name: "deployable", includes: 'target/*.war')
+				
             }
          }
         stage('Deploy') {
             steps {
+				unstash("deployable")
                 echo 'Deploy somewhere!'
             }
         }
