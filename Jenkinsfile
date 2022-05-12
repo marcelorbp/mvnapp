@@ -36,7 +36,7 @@ pipeline {
             steps {
 				unstash("deployable")
                 echo 'Deploy somewhere!'
-				#archiveArtifacts 'target/*.war'#
+				archiveArtifacts 'target/*.war'
 				
 				sshagent(['webfiles']) {
 			    sh 'ssh ec2-user@34.245.42.100 pwd'
